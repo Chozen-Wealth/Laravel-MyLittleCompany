@@ -7,6 +7,5 @@
     <h1 class="text-center">Votre message a bien été envoyé.</h1>
     <h3 class="text-center">Nous vous répondrons dans les plus brefs délais !</h3>
     <a class="btn btn-primary" href="{{ route("home") }}">Retourner à l'accueil</a>
-    
 </div>
 @endsection
