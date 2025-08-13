@@ -21,4 +21,12 @@ class MessageController extends Controller
     public function confirmation () {
         return view("confirmation");
     }
+    public function messages () {
+        $liste_messages = Message::all();
+        return view("backend.messages", compact("liste_messages"));
+    }
+    public function delete_message ($id) {
+        $message = Message::where("id", $id)->delete();
+        return redirect()->route("messages");
+    }
 }

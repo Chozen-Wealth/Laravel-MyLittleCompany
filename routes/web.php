@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
@@ -10,3 +11,9 @@ Route::get('/produits', [HomeController::class, "produits"])->name("produits");
 Route::get('/equipe', [HomeController::class, "equipe"])->name("equipe");
 Route::post('/newmessage', [MessageController::class, "newMessage"])->name("message");
 Route::get('/confirmation', [MessageController::class, "confirmation"])->name("confirmation");
+
+// Backend
+
+Route::get("/backend/employes", [EquipeController::class, "employes"])->name("employes");
+Route::get("/backend/messages", [MessageController::class, "messages"])->name("messages");
+Route::delete("/backend/messages/delete_message/{id}", [MessageController::class, "delete_message"])->name("delete_message");

@@ -8,6 +8,7 @@
     @vite(["resources/css/app.css", "resources/js/app.js"])
 </head>
 <body>
+    @include("components.navBack")
     <div class="container mt-5 mb-5">
         @yield("backend")
     </div>

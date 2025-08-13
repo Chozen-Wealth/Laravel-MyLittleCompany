@@ -16,5 +16,11 @@ class EquipeController extends Controller
         $employe->post = $request->post;
         $employe->role = $request->role;
         $employe->salaire = $request->salaire;
+        $employe->save();
+        return redirect()->route("equipe");
+    }
+    public function employes () {
+        $employe = Employe::all();
+        return view("backend.employes", compact("employe"));
     }
 }
