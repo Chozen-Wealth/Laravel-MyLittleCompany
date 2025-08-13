@@ -23,4 +23,9 @@ class EquipeController extends Controller
         $employe = Employe::all();
         return view("backend.employes", compact("employe"));
     }
+    public function delete_employe ($id) {
+        $employe = Employe::where("id", $id)->delete();
+        return redirect()->route("employes");
+
+    }
 }

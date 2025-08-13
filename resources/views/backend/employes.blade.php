@@ -14,6 +14,7 @@
                 <th>Post</th>
                 <th>Role</th>
                 <th>Salaire</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -28,11 +29,19 @@
                     <td>{{ $personne["post"] }}</td>
                     <td>{{ $personne["role"] }}</td>
                     <td>{{ $personne["salaire"] }}</td>
+                    <td>
+                    <form action="{{ route("delete_employe", $employe->id) }}" method="POST">
+                        @csrf
+                        @method("DELETE")
+                        <button class="btn btn-danger" type="submit">Supprimer</button>
+                    </form>
+                </td>
                 </tr>
                 @endforeach
             @else
             <tr>
                 <td>Aucun employé pour le moment</td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>

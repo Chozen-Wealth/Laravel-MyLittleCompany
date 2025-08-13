@@ -15,5 +15,6 @@ Route::get('/confirmation', [MessageController::class, "confirmation"])->name("c
 // Backend
 
 Route::get("/backend/employes", [EquipeController::class, "employes"])->name("employes");
+Route::delete("/backend/employes/delete_employe/{id}", [EquipeController::class, "delete_employe"])->name("delete_employe");
 Route::get("/backend/messages", [MessageController::class, "messages"])->name("messages");
 Route::delete("/backend/messages/delete_message/{id}", [MessageController::class, "delete_message"])->name("delete_message");
