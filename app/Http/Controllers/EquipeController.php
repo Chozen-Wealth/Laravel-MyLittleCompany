@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Employe;
+use Illuminate\Http\Request;
+
+class EquipeController extends Controller
+{
+    public function newEmploye (Request $request) {
+        $employe = new Employe();
+        $employe->nom = $request->nom;
+        $employe->prenom = $request->prenom;
+        $employe->tel = $request->tel;
+        $employe->email = $request->email;
+        $employe->post = $request->post;
+        $employe->role = $request->role;
+        $employe->salaire = $request->salaire;
+    }
+}
