@@ -16,7 +16,7 @@
           <a class="nav-link active" href="{{ route("employes") }}">Employés</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{{ route("produits") }}">Produits</a>
+          <a class="nav-link active" href="{{ route("backend_produits") }}">Produits</a>
         </li>
       </ul>
       <form class="d-flex" role="search">

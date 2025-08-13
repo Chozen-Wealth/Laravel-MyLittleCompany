@@ -3,7 +3,7 @@
 @section("title", "liste des messages")
 
 @section("backend")
-    <h1>Messages :</h1>
+    <h1>Liste des messages :</h1>
     <table class="table table-striped">
         <thead class="table-dark">
             <tr>
@@ -17,23 +17,38 @@
                 <th>Action</th>
             </tr>
         </thead>
-        @foreach ($liste_messages as $message)
+        @if (count($liste_messages) > 0)
+        
+            @foreach ($liste_messages as $message)
+                <tr>
+                    <td>{{ $message["nom"] }}</td>
+                    <td>{{ $message["prenom"] }}</td>
+                    <td>{{ $message["sujet"] }}</td>
+                    <td>{{ $message["message"] }}</td>
+                    <td>{{ $message["tel"] }}</td>
+                    <td>{{ $message["mail"] }}</td>
+                    <td>{{ $message["created_at"] }}</td>
+                    <td>
+                        <form action="{{ route("delete_message", $message->id) }}" method="POST">
+                            @csrf
+                            @method("DELETE")
+                            <button class="btn btn-danger" type="submit">Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
+        
+        @else
             <tr>
-                <td>{{ $message["nom"] }}</td>
-                <td>{{ $message["prenom"] }}</td>
-                <td>{{ $message["sujet"] }}</td>
-                <td>{{ $message["message"] }}</td>
-                <td>{{ $message["tel"] }}</td>
-                <td>{{ $message["mail"] }}</td>
-                <td>{{ $message["created_at"] }}</td>
-                <td>
-                    <form action="{{ route("delete_message", $message->id) }}" method="POST">
-                        @csrf
-                        @method("DELETE")
-                        <button class="btn btn-danger" type="submit">Supprimer</button>
-                    </form>
-                </td>
+                <td>Aucun message reçu</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
-        @endforeach
+        @endif
     </table>
 @endsection

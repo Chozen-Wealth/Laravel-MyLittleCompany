@@ -1,6 +1,6 @@
 @extends("Layouts.back")
 
-@section("title", "Creation d'employé")
+@section("title", "Liste d'employés")
 
 @section("backend")
     <div class="d-flex align-items-center justify-content-between">

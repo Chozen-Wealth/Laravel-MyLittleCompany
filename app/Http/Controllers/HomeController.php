@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Employe;
+use App\Models\Produit;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -10,12 +12,14 @@ class HomeController extends Controller
         return view("home");
     }
     public function produits () {
-        return view("produits");
+        $produits = Produit::all();
+        return view("produits", compact("produits"));
     }
     public function contact () {
         return view("contact");
     }
     public function equipe () {
-        return view("equipe");
+        $employes = Employe::all();
+        return view("equipe", compact("employes"));
     }
 }

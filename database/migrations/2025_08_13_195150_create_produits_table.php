@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nom', 70);
             $table->string('type', 30);
             $table->string('descriptif', 50);
-            $table->string('img(url)');
+            $table->string('img')->nullable();
             $table->decimal('prix', 8, 2);
             $table->timestamps();
         });
