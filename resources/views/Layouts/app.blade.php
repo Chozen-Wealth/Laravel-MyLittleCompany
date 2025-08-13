@@ -7,7 +7,7 @@
     <title>Document</title>
     @vite(["resources/css/app.css", "resources/js/app.js"])
 </head>
-<body>
+<body class="bg-light">
     @include("components.nav")
     <div class="container mt-5 mb-5">
         @yield("content")

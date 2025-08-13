@@ -3,7 +3,10 @@
 @section("title", "Creation d'employé")
 
 @section("backend")
-    <h1>Liste des employés :</h1>
+    <div class="d-flex align-items-center justify-content-between">
+        <h1>Liste des employés :</h1>
+        <a class="btn btn-primary" href="{{ route("create_employe_page") }}">Ajouter un employé</a>
+    </div>
     <table class="table table-striped">
         <thead class="table-dark">
             <tr>
@@ -28,9 +31,9 @@
                     <td>{{ $personne["email"] }}</td>
                     <td>{{ $personne["post"] }}</td>
                     <td>{{ $personne["role"] }}</td>
-                    <td>{{ $personne["salaire"] }}</td>
+                    <td>{{ number_format($personne["salaire"], 2, ",", " ") }} €</td>
                     <td>
-                    <form action="{{ route("delete_employe", $employe->id) }}" method="POST">
+                    <form action="{{ route("delete_employe", $personne->id) }}" method="POST">
                         @csrf
                         @method("DELETE")
                         <button class="btn btn-danger" type="submit">Supprimer</button>

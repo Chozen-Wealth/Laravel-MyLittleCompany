@@ -17,7 +17,7 @@ class EquipeController extends Controller
         $employe->role = $request->role;
         $employe->salaire = $request->salaire;
         $employe->save();
-        return redirect()->route("equipe");
+        return redirect()->route("employes");
     }
     public function employes () {
         $employe = Employe::all();
@@ -26,6 +26,8 @@ class EquipeController extends Controller
     public function delete_employe ($id) {
         $employe = Employe::where("id", $id)->delete();
         return redirect()->route("employes");
-
+    }
+    public function create_employe_page () {
+        return view("backend.create_employe");
     }
 }

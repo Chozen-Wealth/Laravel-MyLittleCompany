@@ -7,16 +7,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{ route("home") }}">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{ route("home") }}">Frontend Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route("messages") }}">Messages</a>
+          <a class="nav-link active" href="{{ route("messages") }}">Messages</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route("employes") }}">Employés</a>
+          <a class="nav-link active" href="{{ route("employes") }}">Employés</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route("contact") }}">Contact</a>
+          <a class="nav-link active" href="{{ route("produits") }}">Produits</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
