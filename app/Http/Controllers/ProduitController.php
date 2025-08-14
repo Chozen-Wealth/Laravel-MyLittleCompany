@@ -33,4 +33,8 @@ class ProduitController extends Controller
     public function create_produits_page () {
         return view("backend.create_produit");
     }
+    public function delete_produits ($id) {
+        $produit = Produit::where("id",$id)->delete();
+        return redirect()->route("backend_produits");
+    }
 }
